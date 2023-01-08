@@ -795,3 +795,10 @@ while wait(5) do
     local Encoded = HttpService:JSONEncode(EncodeConfig(Settings));
     writefile("fates-esp.json", Encoded);
 end
+mouse.KeyDown:connect(function(key)
+    if key=="z" then
+        Aimbot.Toggle("Show Fov", AimbotSettings.ShowFov, function(Callback)
+        AimbotSettings.ShowFov = Callback
+        FOV.Visible = Callback
+    end
+end)
